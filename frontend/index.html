@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Greeting App</title>
+</head>
+<body>
+  <h1>Aggregated Greeting App</h1>
+  <button onclick="fetchGreeting('/server1')">Hello from Server 1</button>
+  <button onclick="fetchGreeting('/server2')">Hello from Server 2</button>
+  <button onclick="fetchGreeting('/server3')">Hello from Server 3</button>
+  <button onclick="fetchGreeting('/aggregated')">Aggregated Hello</button>
+  <p id="output"></p>
+  <script src="script.js"></script>
+</body>
+</html>
