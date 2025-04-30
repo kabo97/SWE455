@@ -1,14 +1,17 @@
 {
-  "name": "swe455",
+  "name": "microservice-project",
   "version": "1.0.0",
-  "description": "This project demonstrates a multi-service cloud-based microservice architecture using DevOps practices. It consists of:",
-  "main": "index.js",
+  "description": "Cloud-based Microservice with DevOps Pipeline",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "npm run lint && echo 'Build completed'",
+    "test": "jest",
+    "test:integration": "jest --testMatch='**/*.integration.test.js'",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "axios": "^1.9.0",
     "express": "^5.1.0"
