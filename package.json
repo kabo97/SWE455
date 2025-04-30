@@ -4,7 +4,8 @@
   "description": "This project demonstrates a multi-service cloud-based microservice architecture using DevOps practices. It consists of:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
