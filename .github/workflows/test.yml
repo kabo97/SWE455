@@ -16,6 +16,11 @@ jobs:
           node-version: 18
       - run: npm install
       - run: npm test
+      - name: Upload Jest test report
+        uses: actions/upload-artifact@v3
+        with:
+          name: server1-test-report
+          path: ./server1/test-report.json
 
   test-server2:
     name: Test Server 2
@@ -30,6 +35,11 @@ jobs:
           node-version: 18
       - run: npm install
       - run: npm test
+      - name: Upload Jest test report
+        uses: actions/upload-artifact@v3
+        with:
+          name: server2-test-report
+          path: ./server2/test-report.json
 
   test-server3:
     name: Test Server 3
@@ -44,6 +54,11 @@ jobs:
           node-version: 18
       - run: npm install
       - run: npm test
+      - name: Upload Jest test report
+        uses: actions/upload-artifact@v3
+        with:
+          name: server3-test-report
+          path: ./server3/test-report.json
 
   test-aggregator:
     name: Test Aggregator
@@ -58,3 +73,8 @@ jobs:
           node-version: 18
       - run: npm install
       - run: npm test
+      - name: Upload Jest test report
+        uses: actions/upload-artifact@v3
+        with:
+          name: aggregator-test-report
+          path: ./aggregator/test-report.json
