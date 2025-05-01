@@ -9,9 +9,9 @@ app.use(cors());
 app.get('/greet', async (req, res) => {
   try {
     const [s1, s2, s3] = await Promise.all([
-      axios.get('http://server1:3001/greet'),
-      axios.get('http://server2:3002/greet'),
-      axios.get('http://server3:3003/greet')
+      axios.get('https://server1-fezp.onrender.com/greet'),
+      axios.get('https://server2-nk0y.onrender.com/greet'),
+      axios.get('https://server3-a4s6.onrender.com/greet')
     ]);
 
     // Combine all messages

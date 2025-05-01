@@ -7,7 +7,7 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "build": "npm run lint && echo 'Build completed'",
-    "test": "jest --json --outputFile=test-report.json",
+    "test": "jest",
     "test:integration": "jest --testMatch='**/*.integration.test.js'",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
