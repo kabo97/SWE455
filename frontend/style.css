@@ -36,3 +36,20 @@ button:hover {
   height: auto;
   margin-top: 20px;
 }
+.author-name-left {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+}
+
+.author-name-right {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+}

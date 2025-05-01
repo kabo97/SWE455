@@ -22,5 +22,9 @@ const baseUrls = {
       output.innerText = `${data.message} (From: ${data.server} @ ${new Date(data.timestamp).toLocaleTimeString()}) ${data.emoji}`;
     }
   }
+  function openResultPage(type) {
+    window.location.href = `result.html?server=${encodeURIComponent(type)}`;
+  }
   
+   
   

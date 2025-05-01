@@ -5,12 +5,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="App-header">
+  <div class="author-name-left">ALI ELMATARWY</div>
+  <div class="author-name-right">ABDULAZIZ ALSAYYARI</div>
   <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGYyc3F0ZDBpMW9hZ3ltdGJrbWw4bnA0MzlvN3M2bmR6NjhpaXJvYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/p2GjsflFKS72fsUagg/giphy.gif"class="App-logo1" alt="logo" />
   <h1 class="App-header">Aggregated Greeting App</h1>
-  <button onclick="fetchGreeting('/server1')">Hello from Server 1</button>
-  <button onclick="fetchGreeting('/server2')">Hello from Server 2</button>
-  <button onclick="fetchGreeting('/server3')">Hello from Server 3</button>
-  <button onclick="fetchGreeting('/aggregated')">Aggregated Hello</button>
+  <button onclick="openResultPage('/server1')">Server 1</button>
+  <button onclick="openResultPage('/server2')">Server 2</button>
+  <button onclick="openResultPage('/server3')">Server 3</button>
+  <button onclick="openResultPage('/aggregated')">Aggregation</button>
   <p id="output"></p>
   <script src="script.js"></script>  
 

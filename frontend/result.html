@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Greeting Result</title>
+  <style>
+    body {
+      background-color: #000;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .response-box {
+      background-color: #444;
+      padding: 20px 40px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 80%;
+    }
+  </style>
+</head>
+<body>
+  <div class="response-box" id="response">Loading...</div>
+
+  <script>
+    async function fetchAndShow() {
+      const params = new URLSearchParams(window.location.search);
+      const server = params.get('server');
+      const urlMap = {
+        '/server1': 'http://localhost:3001/greet',
+        '/server2': 'http://localhost:3002/greet',
+        '/server3': 'http://localhost:3003/greet',
+        '/aggregated': 'http://localhost:4000/greet'
+      };
+
+      const res = await fetch(urlMap[server]);
+      const data = await res.json();
+
+      let content = '';
+
+      if (data.servers) {
+        // Aggregator response
+        const details = data.servers.map(s =>
+          `${s.server} @ ${new Date(s.timestamp).toLocaleTimeString()} ${s.emoji}`
+        ).join('<br>');
+        content = `<strong>${data.message}</strong><br><br>${details}`;
+      } else {
+        content = `<strong>${data.message}</strong><br><br>(From: ${data.server} @ ${new Date(data.timestamp).toLocaleTimeString()}) ${data.emoji}`;
+      }
+
+      document.getElementById('response').innerHTML = content;
+    }
+
+    fetchAndShow();
+  </script>
+</body>
+</html>
