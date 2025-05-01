@@ -14,4 +14,8 @@ app.get('/greet', (req, res) => {
   });
 });
 
-app.listen(PORT, () => console.log(`Server 2 running on port ${PORT}`));
+if (require.main === module) {
+  app.listen(PORT, () => console.log(`Server 2 running on port ${PORT}`));
+}
+
+module.exports = app;

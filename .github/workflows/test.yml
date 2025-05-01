@@ -1,0 +1,60 @@
+name: Run Tests on All Servers
+
+on: [push, pull_request]
+
+jobs:
+  test-server1:
+    name: Test Server 1
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./server1
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install
+      - run: npm test
+
+  test-server2:
+    name: Test Server 2
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./server2
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install
+      - run: npm test
+
+  test-server3:
+    name: Test Server 3
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./server3
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install
+      - run: npm test
+
+  test-aggregator:
+    name: Test Aggregator
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./aggregator
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install
+      - run: npm test
