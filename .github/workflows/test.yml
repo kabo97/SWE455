@@ -23,9 +23,8 @@ jobs:
       - name: Run Server 1 Tests
         run: |
           npx jest server1/tests/greet.test.js --json --outputFile=server1-report.json
-          ls -al
       - name: Upload Server 1 Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main  # 🟢 switch to @main
         with:
           name: server1-test-report
           path: server1-report.json
@@ -34,9 +33,8 @@ jobs:
       - name: Run Server 2 Tests
         run: |
           npx jest server2/tests/greet.test.js --json --outputFile=server2-report.json
-          ls -al
       - name: Upload Server 2 Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: server2-test-report
           path: server2-report.json
@@ -45,9 +43,8 @@ jobs:
       - name: Run Server 3 Tests
         run: |
           npx jest server3/tests/greet.test.js --json --outputFile=server3-report.json
-          ls -al
       - name: Upload Server 3 Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: server3-test-report
           path: server3-report.json
@@ -56,9 +53,8 @@ jobs:
       - name: Run Aggregator Tests
         run: |
           npx jest aggregator/tests/greet.test.js --json --outputFile=aggregator-report.json
-          ls -al
       - name: Upload Aggregator Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: aggregator-test-report
           path: aggregator-report.json
