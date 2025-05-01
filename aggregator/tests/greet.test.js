@@ -19,3 +19,5 @@ test('GET /greet should return combined message and server details', async () =>
 
   expect(res.body).toHaveProperty('aggregatedAt');
 });
+
+
