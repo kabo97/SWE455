@@ -3,78 +3,55 @@ name: Run Tests on All Servers
 on: [push, pull_request]
 
 jobs:
-  test-server1:
-    name: Test Server 1
+  test-all-servers:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./server1
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm install
-      - run: npm test
-      - name: Upload Jest test report
+
+      - name: Install dependencies (root)
+        run: npm install
+
+      # Test Server 1
+      - name: Run Server 1 tests
+        run: npx jest server1/tests/greet.test.js --json --outputFile=server1-report.json
+
+      - name: Upload Server 1 report
         uses: actions/upload-artifact@v3
         with:
           name: server1-test-report
-          path: ./server1/test-report.json
+          path: server1-report.json
 
-  test-server2:
-    name: Test Server 2
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./server2
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: npm install
-      - run: npm test
-      - name: Upload Jest test report
+      # Test Server 2
+      - name: Run Server 2 tests
+        run: npx jest server2/tests/greet.test.js --json --outputFile=server2-report.json
+
+      - name: Upload Server 2 report
         uses: actions/upload-artifact@v3
         with:
           name: server2-test-report
-          path: ./server2/test-report.json
+          path: server2-report.json
 
-  test-server3:
-    name: Test Server 3
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./server3
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: npm install
-      - run: npm test
-      - name: Upload Jest test report
+      # Test Server 3
+      - name: Run Server 3 tests
+        run: npx jest server3/tests/greet.test.js --json --outputFile=server3-report.json
+
+      - name: Upload Server 3 report
         uses: actions/upload-artifact@v3
         with:
           name: server3-test-report
-          path: ./server3/test-report.json
+          path: server3-report.json
 
-  test-aggregator:
-    name: Test Aggregator
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./aggregator
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: npm install
-      - run: npm test
-      - name: Upload Jest test report
+      # Test Aggregator
+      - name: Run Aggregator tests
+        run: npx jest aggregator/tests/greet.test.js --json --outputFile=aggregator-report.json
+
+      - name: Upload Aggregator report
         uses: actions/upload-artifact@v3
         with:
           name: aggregator-test-report
-          path: ./aggregator/test-report.json
+          path: aggregator-report.json
