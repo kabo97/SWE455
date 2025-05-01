@@ -4,54 +4,56 @@ on: [push, pull_request]
 
 jobs:
   test-all-servers:
+    name: Test All Services
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install dependencies (root)
+      - name: Install Dependencies (root)
         run: npm install
 
-      # Test Server 1
-      - name: Run Server 1 tests
+      # ---------- Server 1 ----------
+      - name: Run Server 1 Tests
         run: npx jest server1/tests/greet.test.js --json --outputFile=server1-report.json
 
-      - name: Upload Server 1 report
-        uses: actions/upload-artifact@v3
+      - name: Upload Server 1 Report
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: server1-test-report
           path: server1-report.json
 
-      # Test Server 2
-      - name: Run Server 2 tests
+      # ---------- Server 2 ----------
+      - name: Run Server 2 Tests
         run: npx jest server2/tests/greet.test.js --json --outputFile=server2-report.json
 
-      - name: Upload Server 2 report
-        uses: actions/upload-artifact@v3
+      - name: Upload Server 2 Report
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: server2-test-report
           path: server2-report.json
 
-      # Test Server 3
-      - name: Run Server 3 tests
+      # ---------- Server 3 ----------
+      - name: Run Server 3 Tests
         run: npx jest server3/tests/greet.test.js --json --outputFile=server3-report.json
 
-      - name: Upload Server 3 report
-        uses: actions/upload-artifact@v3
+      - name: Upload Server 3 Report
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: server3-test-report
           path: server3-report.json
 
-      # Test Aggregator
-      - name: Run Aggregator tests
+      # ---------- Aggregator ----------
+      - name: Run Aggregator Tests
         run: npx jest aggregator/tests/greet.test.js --json --outputFile=aggregator-report.json
 
-      - name: Upload Aggregator report
-        uses: actions/upload-artifact@v3
+      - name: Upload Aggregator Report
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: aggregator-test-report
           path: aggregator-report.json
