@@ -20,7 +20,7 @@ All components are containerized with Docker and deployed through CI/CD pipeline
 
 | Name           | Role                             | Responsibilities |
 |----------------|----------------------------------|------------------|
-| Student A      | Developer & Tester               | Implemented microservices, frontend, Docker setup, unit tests |
+| Ali Elmatarwy      | Developer & Tester               | Implemented microservices, frontend, Docker setup, unit tests |
 | Student B      | CI/CD Engineer & Documentation   | GitHub Actions, deployment, security scans, final report |
 
 ---
@@ -48,4 +48,8 @@ project-root/ │ ├── aggregator/ # Aggregation service │ ├── inde
 ```bash
 git clone https://github.com/your-org/greeting-microservice.git
 cd greeting-microservice
+
+### Deployment
+https://swe455-aggregator-ala8bhgcg-kabo97s-projects.vercel.app
+
 
