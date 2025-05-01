@@ -2,14 +2,17 @@
 <html>
 <head>
   <title>Greeting App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1>Aggregated Greeting App</h1>
+<body class="App-header">
+  <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGYyc3F0ZDBpMW9hZ3ltdGJrbWw4bnA0MzlvN3M2bmR6NjhpaXJvYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/p2GjsflFKS72fsUagg/giphy.gif"class="App-logo1" alt="logo" />
+  <h1 class="App-header">Aggregated Greeting App</h1>
   <button onclick="fetchGreeting('/server1')">Hello from Server 1</button>
   <button onclick="fetchGreeting('/server2')">Hello from Server 2</button>
   <button onclick="fetchGreeting('/server3')">Hello from Server 3</button>
   <button onclick="fetchGreeting('/aggregated')">Aggregated Hello</button>
   <p id="output"></p>
-  <script src="script.js"></script>
+  <script src="script.js"></script>  
+
 </body>
 </html>

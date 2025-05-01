@@ -1,6 +1,9 @@
 FROM node:18
+
 WORKDIR /app
-COPY index.js .
+COPY . .
+
 RUN npm init -y
-RUN npm install express axios
+RUN npm install express cors axios
+
 CMD ["node", "index.js"]

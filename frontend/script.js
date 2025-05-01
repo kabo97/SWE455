@@ -10,6 +10,17 @@ const baseUrls = {
     const url = baseUrls[type];
     const res = await fetch(url);
     const data = await res.json();
-    output.innerText = data.message;
+  
+    if (data.servers) {
+      // Aggregated response case
+      const details = data.servers.map(s =>
+        `${s.server} @ ${new Date(s.timestamp).toLocaleTimeString()} ${s.emoji}`
+      ).join(' | ');
+      output.innerText = `${data.message}\n${details}`;
+    } else {
+      // Single server response
+      output.innerText = `${data.message} (From: ${data.server} @ ${new Date(data.timestamp).toLocaleTimeString()}) ${data.emoji}`;
+    }
   }
+  
   
