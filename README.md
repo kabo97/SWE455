@@ -18,10 +18,10 @@ All components are containerized with Docker and deployed through CI/CD pipeline
 
 ## 👥 Team Members
 
-| Name           | Role                             | Responsibilities |
-|----------------|----------------------------------|------------------|
-| Ali Elmatarwy      | Developer & Tester               | Implemented microservices, frontend, Docker setup, unit tests |
-| Student B      | CI/CD Engineer & Documentation   | GitHub Actions, deployment, security scans, final report |
+| Name                 | Role                             | Responsibilities |
+|----------------------|----------------------------------|------------------|
+| Ali Elmatarwy        | Developer & Tester               | Implemented microservices, frontend, Docker setup, unit tests |
+| Abdulaziz Alsayyari  | CI/CD Engineer & Documentation   | GitHub Actions, deployment, security scans, final report |
 
 ---
 
@@ -46,10 +46,9 @@ project-root/ │ ├── aggregator/ # Aggregation service │ ├── inde
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-org/greeting-microservice.git
+git clone https://github.com/kabo97/SWE455.git
 cd greeting-microservice
 
 ### Deployment
-https://swe455-aggregator-ala8bhgcg-kabo97s-projects.vercel.app
-
+https://swe455-aggregator.vercel.app
 
