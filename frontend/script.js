@@ -1,8 +1,8 @@
 const baseUrls = {
-    '/server1': 'http://localhost:3001/greet',
-    '/server2': 'http://localhost:3002/greet',
-    '/server3': 'http://localhost:3003/greet',
-    '/aggregated': 'http://localhost:4000/greet'
+    '/server1': 'https://server1-fezp.onrender.com/greet',
+    '/server2': 'https://server2-nk0y.onrender.com/greet',
+    '/server3': 'https://server3-a4s6.onrender.com/greet',
+    '/aggregated': 'https://aggregator-d1fx.onrender.com/greet'
   };
   
   async function fetchGreeting(type) {
